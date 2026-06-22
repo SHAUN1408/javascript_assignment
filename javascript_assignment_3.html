@@ -1,32 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JavaScript Arrays Assignment</title>
+    <title>JavaScript Array Filter Assignment</title>
 </head>
 <body>
  
-    <h3>Today Fruits</h3>
-    <ul id="fruit-list"></ul>
-    
-    <hr />
-    
-    <h3>Today Vegetables</h3>
-    <ul id="veg-list"></ul>
+    <h3>Check the Browser Console to See the Filtered Array</h3>
  
     <script>
-       
-        const fruits = ["Apple", "Banana", "Orange", "Mango", "Strawberry"];
-        const vegetables = ["Carrot", "Broccoli", "Spinach", "Tomato", "Cucumber"];
+        // 1. Copy the provided array of people
+        const people = [
+            "Alice Anderson",
+            "Aaron Adams",
+            "Bella Brown",
+            "Brian Black",
+            "Cathy Carter",
+            "Charles Cooper",
+            "Diana Davis",
+            "Daniel Drake",
+            "Ella Evans",
+            "Ethan Edwards",
+            "Fiona Fisher",
+            "Frank Foster",
+            "Grace Green",
+            "Gavin Gray",
+            "Hannah Harris",
+            "Henry Hill",
+            "Isabella Ingram",
+            "Ian Irving",
+            "Jack Johnson",
+            "Julia James"
+        ];
  
-   
-        for (let i = 0; i < fruits.length; i++) {
-            document.getElementById("fruit-list").innerHTML += `<li>${fruits[i]}</li>`;
-        }
+        // 2. Choose the letter you want to filter by (e.g., "B")
+        const targetLetter = "B";
  
+        // 3. Use the filter() method to pick out names starting with that letter
+        const result = people.filter((person) => {
+            // Check if the first character (index 0) matches our target letter
+            return person.charAt(0) === targetLetter;
+        });
  
-        for (let i = 0; i < vegetables.length; i++) {
-            document.getElementById("veg-list").innerHTML += `<li>${vegetables[i]}</li>`;
-        }
+        // 4. Display the filtered array in the browser console
+        console.log(`Names starting with "${targetLetter}":`, result);
     </script>
  
 </body>
